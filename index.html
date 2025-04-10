@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Sesión 2: ¡Construyendo la Decisión! – El Poder del Toque</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #ffa500; color: white; text-align: center; padding: 10px; } /* Orange Accent */
+        .activity { margin-bottom: 20px; }
+        details > summary {
+            background-color: #ffa500; /* Orange Accent */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 0px; /* Reduced margin */
+            font-weight: bold;
+            list-style: none; /* Hide default arrow */
+            position: relative;
+            outline: none;
+            border-radius: 5px 5px 0 0; /* Rounded top corners */
+        }
+        details > summary::-webkit-details-marker { display: none; } /* Hide default arrow for Chrome/Safari */
+        details > summary::before { /* Custom Arrow */
+            content: '▶';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9em; /* Slightly larger arrow */
+            transition: transform 0.2s;
+        }
+        details[open] > summary::before { /* Custom Arrow when open */
+            transform: translateY(-50%) rotate(90deg);
+        }
+        details .content { /* Content visible by default inside details */
+             display: block;
+             padding: 15px; /* More padding */
+             border: 1px solid #ddd;
+             border-top: none; /* Avoid double border with summary */
+             margin-bottom: 10px;
+             border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px; /* Add some space above the table */
+        }
+        th, td {
+            padding: 12px; /* Slightly more padding */
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top; /* Ensure content aligns at the top */
+        }
+        th {
+            background-color: #f8f8f8; /* Lighter grey background for headers */
+            font-weight: bold;
+        }
+        /* Style for the 'Action' column */
+        td:first-child {
+            width: 50%;
+        }
+        /* Style for the 'Dialogue' column */
+        td:last-child {
+            width: 50%;
+        }
+        /* Making facilitator instructions clearer */
+        td em, td i { /* Style for italicized facilitator notes */
+            color: #555;
+            font-style: italic;
+            display: block; /* Put notes on new lines */
+            margin-top: 5px;
+        }
+        /* Making Step X text stand out (already bold via parent <strong>) */
+        /* td strong { display: block; margin-bottom: 5px; } */ /* Keep default behavior */
+
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+        ul, ol {
+            margin-top: 5px; /* Adjust spacing for lists */
+            margin-bottom: 10px;
+            padding-left: 25px; /* Indent lists slightly more */
+        }
+        li {
+            margin-bottom: 8px; /* More space between list items */
+        }
+        .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555; font-weight: bold;}
+         hr { border: none; border-top: 1px solid #eee; margin: 8px 0; } /* Subtle separator */
+         .subtitle { font-size: 0.9em; color: #e0e0e0; margin-top: 5px;} /* Subtitle style from example */
+    </style>
+    <script>
+        // Basic script to ensure details elements work consistently if needed,
+        // but modern browsers handle <details> natively.
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook - Sesión 2: ¡Construyendo la Decisión! – El Poder del Toque</h1>
+    </div>
+    <div class="container">
+        <h2 class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+        <!-- Resumen de Sesión -->
+        <details id="activity-0" class="activity" open> <!-- Open by default -->
+            <summary>📝 Resumen de Sesión</summary>
+            <div class="content">
+                <table>
+                    <tr>
+                        <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
+                            <strong>🎯 Objetivo de la Sesión:</strong>
+                            <ul>
+                                <li>Programar la interacción central de la mini-historia interactiva en Scratch Jr.</li>
+                                <li>Asegurar que al tocar al Héroe, la historia avance a la Escena Mejor.</li>
+                                <li>Asegurar que al tocar al Villano/Problema, la historia avance a la Escena Peor.</li>
+                                <li>Reforzar la colaboración entre roles (Constructor/a, Diseñador/a, Probador/a) y el uso del Kanban.</li>
+                            </ul>
+                        </td>
+                        <td style="width: 50%; padding: 10px;">
+                            <strong>🔑 Entregable Clave:</strong> Proyecto Scratch Jr. con la interacción principal programada y funcional: Tocar Héroe lleva a Escena Mejor, Tocar Villano lleva a Escena Peor.
+                            <br><br>
+                            <strong>⏱️ Duración Estimada:</strong> 40 minutos.
+                            <br><br>
+                            <strong>🛠️ Materiales Específicos:</strong>
+                            <ul>
+                                <li>Dispositivos con Scratch Jr. y el proyecto guardado de la Sesión 1.</li>
+                                <li>Dibujos de la Fase 2 (especialmente el T-Bar para referencia de flujo).</li>
+                                <li>Tablero Kanban con el estado actualizado de la Sesión 1.</li>
+                                <li>Nuevas tarjetas de tareas para Kanban: "Programar Clic Héroe", "Programar Clic Villano".</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </details>
+
+        <!-- Actividad 1: Stand-up -->
+        <details id="activity-1" class="activity">
+            <summary>🚀 Actividad 1: Stand-up ⏰ Tiempo: 5 minutos</summary>
+            <div class="content">
+                <table>
+                    <tr>
+                        <th style="width: 50%;">Acción</th>
+                        <th style="width: 50%;">Diálogo del Maestro</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paso 1 (2 min): Revisión Rápida y Objetivo del Día</strong>
+                            <br>Reunir a los equipos frente a su dispositivo con el proyecto de la Sesión 1 abierto.
+                            <br>Preguntar qué se logró en la sesión anterior.
+                            <br><strong>Proyectar Diapositiva 1</strong> (Título de la Sesión + Iconos de clic/touch y flechas indicando cambio de escena).
+                        </td>
+                        <td>
+                            "¡Hola de nuevo, equipos de Héroes! ¿Listos para darle vida a nuestra aventura?"
+                            <br><br>
+                            "Rápido, ¿qué creamos la sesión pasada? <em>(Esperar respuestas: fondos, personajes).</em> ¡Exacto! ¡Construimos nuestro mundo!"
+                            <br><br>
+                            "Hoy... ¡llega la MAGIA DEL CLIC! <em>(Mostrar Diapositiva 1)</em>. Nuestra misión es programar qué pasa cuando tocamos a nuestros personajes. ¡Haremos que la historia cambie según a quién toquemos!"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paso 2 (3 min): Revisión y Asignación de Roles</strong>
+                             <br>Recordar brevemente los roles (Diseñador/a, Constructor/a, Probador/a).
+                             <br>Permitir que los equipos roten roles si lo desean o mantener los mismos. Confirmar quién tiene cada rol.
+                             <br>Añadir las nuevas tarjetas "Programar Clic Héroe" y "Programar Clic Villano" a la columna "Tareas por Hacer" del Kanban.
+                        </td>
+                        <td>
+                            "Para esta misión mágica, necesitamos a nuestros expertos. Recordemos los roles: ¿Quién cuida los dibujos? (Diseñador/a). ¿Quién usa la tablet para programar? (Constructor/a). ¿Y quién prueba todo y da ideas? (Probador/a)."
+                             <br><br>
+                            "¿Quieren cambiar de roles hoy o seguimos igual? <em>(Dar 30 segundos para que decidan y confirmen)</em>. ¡Perfecto!"
+                            <br><br>
+                             "Miren nuestro Mapa Mágico (Kanban). ¡Tenemos nuevas tareas! Vamos a añadir 'Programar Clic Héroe' y 'Programar Clic Villano' a 'Tareas por Hacer'."
+                             <br>
+                            <em>(Añadir las tarjetas al Kanban).</em> "¡Listos para empezar a programar!"
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </details>
+
+        <!-- Actividad 2: Programando el Corazón de la Aventura -->
+        <details id="activity-2" class="activity">
+            <summary>💻 Actividad 2: Programando el Corazón de la Aventura ⏰ Tiempo: 30 minutos</summary>
+            <div class="content">
+                <table>
+                    <tr>
+                        <th style="width: 50%;">Acción</th>
+                        <th style="width: 50%;">Diálogo del Maestro</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paso 1 (12 min): Programar Clic Héroe -> Escena Mejor</strong>
+                            <br>Guiar al Constructor/a para seleccionar al Héroe en la Escena Inicial.
+                            <br>Instruir sobre cómo añadir el bloque "Al Tocar Personaje" (Start on Tap - Bloque Amarillo).
+                            <br>Instruir sobre cómo añadir el bloque "Ir a Escena" (Go to Page - Bloque Rojo) y seleccionar la Escena Mejor creada en Sesión 1.
+                            <br><strong>Proyectar Diapositiva 2</strong> (Mostrar visualmente los bloques "Al Tocar Personaje" y "Ir a Escena" conectados, y cómo seleccionar la página correcta).
+                            <br>El Diseñador/a confirma que la escena seleccionada es la "Mejor" según el plan/T-Bar.
+                            <br>El Probador/a prueba inmediatamente si al tocar al Héroe se va a la Escena Mejor.
+                            <br>Mover tarjeta "Programar Clic Héroe" a "¡Haciendo Ahora!" y luego a "¡Listo para Probar!".
+                            <br>Facilitador circula activamente, resolviendo dudas sobre los bloques.
+                        </td>
+                        <td>
+                            "¡Constructores, es hora de la primera magia! Seleccionen a su Héroe en la pantalla de inicio."
+                            <br><br>
+                            "Ahora, busquen el bloque amarillo que empieza la acción cuando tocamos algo... ¡Exacto, el que tiene una manita tocando! Arrástrenlo abajo. <em>(Ver Diapositiva 2)</em>."
+                            <br><br>
+                            "¡Bien! Ahora necesitamos decirle a dónde ir. Busquen el bloque rojo que cambia de escena, el que parece una flecha yendo a otra página. ¡Conéctenlo debajo del bloque amarillo!"
+                            <br><br>
+                            "Ahora lo más importante: ¡tienen que elegir a qué escena ir! Pulsen en el número de la página dentro del bloque rojo. Diseñadores, ¿cuál es la Escena Mejor que dibujamos? <em>(Esperar confirmación)</em>. ¡Constructores, seleccionen esa página!"
+                             <br><br>
+                            "¡Probadores, a la acción! Toquen al Héroe en la pantalla. ¿Nos lleva a la Escena Mejor? ¡Sí! / ¡Uy, no! <em>(Fomentar la prueba inmediata y el feedback)</em>."
+                            <br><br>
+                             "¡Genial! Muevan 'Programar Clic Héroe' a '¡Haciendo Ahora!' mientras trabajan, y a '¡Listo para Probar!' cuando crean que funciona."
+                             <br>
+                            <em>(Facilitador apoya: "¿Encontraste el bloque rojo?", "Recuerda seleccionar la página correcta", "Probador, ¿funcionó esta vez?").</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paso 2 (12 min): Programar Clic Villano -> Escena Peor</strong>
+                            <br>Guiar al Constructor/a para seleccionar al Villano/Problema en la Escena Inicial.
+                            <br>Repetir el proceso: añadir bloque "Al Tocar Personaje" y bloque "Ir a Escena".
+                            <br>Asegurarse de que seleccionen la Escena Peor creada en Sesión 1.
+                            <br><strong>Proyectar Diapositiva 3</strong> (Similar a la Diapositiva 2 pero enfocada en el Villano/Problema y la Escena Peor).
+                            <br>El Diseñador/a confirma que la escena seleccionada es la "Peor".
+                            <br>El Probador/a prueba si al tocar al Villano se va a la Escena Peor. Realiza pruebas combinadas (tocar héroe, volver, tocar villano).
+                            <br>Mover tarjeta "Programar Clic Villano" a "¡Haciendo Ahora!" y luego a "¡Listo para Probar!".
+                            <br>Facilitador circula, enfatizando la diferencia entre este clic y el anterior.
+                        </td>
+                        <td>
+                            "¡Excelente con el Héroe! Ahora, ¡vamos con el Villano o el Problema! Constructores, selecciónenlo en la Escena Inicial."
+                            <br><br>
+                            "¡Misma magia, diferente destino! Añadan el bloque amarillo 'Al Tocar Personaje'. <em>(Ver Diapositiva 3)</em>."
+                            <br><br>
+                            "Ahora, el bloque rojo 'Ir a Escena'. ¿Pero a qué escena nos lleva el Villano? Diseñadores, ¡consulten el mapa! <em>(Esperar confirmación: Escena Peor)</em>. ¡Constructores, seleccionen la Escena Peor en el bloque rojo!"
+                            <br><br>
+                            "¡Probadores, su turno! Toquen al Villano. ¿Vamos a la Escena Peor? ¡Prueben también tocar al Héroe de nuevo! ¿Funciona cada uno correctamente?"
+                             <br><br>
+                            "¡Fantástico! Muevan la tarjeta 'Programar Clic Villano' en el Kanban mientras lo hacen."
+                            <br>
+                             <em>(Facilitador asiste: "¿Seleccionaste al Villano correcto?", "Asegúrate que es la página de la Escena Peor", "Probador, ¿qué pasó cuando tocaste al Villano?").</em>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <strong>Paso 3 (6 min): Prueba Intensiva y Ajustes Finos</strong>
+                            <br>El Probador/a lidera una ronda de pruebas más intensivas: tocar rápido, tocar en bordes, asegurar que siempre funcione como se espera.
+                            <br>El Constructor/a realiza pequeños ajustes si algo falla (ej. bloque no conectado, página incorrecta seleccionada), con ayuda del Diseñador/a si es un error de flujo.
+                            <br>Mover las tarjetas a "✅ ¡Terminado!" si la funcionalidad es correcta y estable.
+                        </td>
+                        <td>
+                            "¡Equipos, ahora la prueba de fuego! Probadores, ¡sean detectives exigentes! Toquen al Héroe varias veces, rápido. Luego al Villano. ¿Siempre funciona? ¿Siempre va a la escena correcta?"
+                            <br><br>
+                            "Si algo falla, ¡avisen rápido al Constructor! Puede ser un bloque suelto o la página equivocada."
+                            <br><br>
+                            "Diseñadores, ayuden a verificar que el flujo sea el que planeamos en el T-Bar."
+                             <br><br>
+                            "Si todo funciona perfectamente después de probarlo bien... ¡Es hora de mover esas tarjetas a '✅ ¡Terminado!' en el Mapa Mágico con un gran festejo!"
+                            <br>
+                            <em>(Facilitador observa las pruebas y ayuda a diagnosticar problemas si surgen).</em>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </details>
+
+        <!-- Actividad 3: Cierre con Verificación -->
+        <details id="activity-3" class="activity">
+            <summary>✅ Actividad 3: Cierre con Verificación ⏰ Tiempo: 5 minutos</summary>
+            <div class="content">
+                <table>
+                    <tr>
+                        <th style="width: 50%;">Acción</th>
+                        <th style="width: 50%;">Diálogo del Maestro</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paso 1 (2 min): Demostración Rápida (Opcional)</strong>
+                            <br>Invitar a 1-2 equipos a mostrar rápidamente en su tablet cómo funciona el clic del Héroe y el Villano.
+                        </td>
+                        <td>
+                            "¡Increíble trabajo, programadores! ¡Han dado poder a sus personajes!"
+                            <br><br>
+                            "¿Algún equipo quiere mostrarnos súper rápido cómo funciona su magia del clic? <em>(Seleccionar 1 o 2 equipos para una demo de 30 segundos cada uno).</em> ¡Aplausos para ellos!"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paso 2 (2 min): Guardar Proyecto (¡Fundamental!)</strong>
+                            <br>Guiar EXPLICITAMENTE a los Constructores para guardar el proyecto con los cambios.
+                            <br>Asegurarse de que todos los equipos hayan guardado correctamente. Pedir confirmación visual.
+                            <br><strong>Proyectar Diapositiva 4</strong> (Icono grande de Guardar + Mensaje "¡Guarda tu Magia!").
+                        </td>
+                        <td>
+                            "¡Antes de irnos, paso ESENCIAL! ¡GUARDAR nuestra magia! <em>(Mostrar Diapositiva 4)</em>."
+                            <br><br>
+                            "Constructores, pulsen el botón de guardar (casita o ✓). ¡Asegúrense de que se guarda bien!"
+                             <br><br>
+                            <em>(Circular y verificar activamente. "¿Guardado? ¿Pulgares arriba?").</em>
+                            <br><br>
+                            "¡Perfecto!"
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <strong>Paso 3 (1 min): Próximos Pasos y Cierre</strong>
+                            <br>Anunciar brevemente el objetivo de la Sesión 3 (Probar y Corregir Errores).
+                            <br>Felicitar a los equipos.
+                        </td>
+                        <td>
+                            "¡Felicidades, equipos! ¡Su aventura ya responde al tacto! ¡El corazón de su historia está latiendo!"
+                            <br><br>
+                            "En la próxima sesión, seremos 'Cazadores de Errores'. Probaremos todo MUCHO para asegurarnos de que funciona perfectamente y arreglaremos cualquier cosita que no vaya bien."
+                            <br><br>
+                            "¡Han hecho un trabajo mágico hoy! ¡Nos vemos para la próxima aventura! ¡Adiós, magos del clic!"
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </details>
+
+    </div> <!-- Fin del container -->
+</body>
+</html>
