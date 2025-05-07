@@ -73,8 +73,6 @@
             display: block; /* Put notes on new lines */
             margin-top: 5px;
         }
-        /* Making Step X text stand out (already bold via parent <strong>) */
-        /* td strong { display: block; margin-bottom: 5px; } */ /* Keep default behavior */
 
         span[style*="color: red;"] {
             font-weight: bold;
@@ -90,6 +88,15 @@
         .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555; font-weight: bold;}
          hr { border: none; border-top: 1px solid #eee; margin: 8px 0; } /* Subtle separator */
          .subtitle { font-size: 0.9em; color: #e0e0e0; margin-top: 5px;} /* Subtitle style from example */
+
+         /* Ensure list styling within Action column is consistent */
+         .content td ul, .content td ol {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+         .content td li {
+            margin-bottom: 3px; /* Slightly tighter list spacing */
+        }
     </style>
     <script>
         // Basic script to ensure details elements work consistently if needed,
@@ -115,20 +122,20 @@
                                 <li>Programar la interacción central de la mini-historia interactiva en Scratch Jr.</li>
                                 <li>Asegurar que al tocar al Héroe, la historia avance a la Escena Mejor.</li>
                                 <li>Asegurar que al tocar al Villano/Problema, la historia avance a la Escena Peor.</li>
-                                <li>Reforzar la colaboración entre roles (Constructor/a, Diseñador/a, Probador/a) y el uso del Kanban.</li>
+                                <li>Reforzar la colaboración entre roles y el uso del Kanban.</li>
                             </ul>
                         </td>
                         <td style="width: 50%; padding: 10px;">
-                            <strong>🔑 Entregable Clave:</strong> Proyecto Scratch Jr. con la interacción principal programada y funcional: Tocar Héroe lleva a Escena Mejor, Tocar Villano lleva a Escena Peor.
+                            <strong>🔑 Entregable Clave:</strong> Proyecto Scratch Jr. con la interacción principal programada y funcional.
                             <br><br>
                             <strong>⏱️ Duración Estimada:</strong> 40 minutos.
                             <br><br>
                             <strong>🛠️ Materiales Específicos:</strong>
                             <ul>
                                 <li>Dispositivos con Scratch Jr. y el proyecto guardado de la Sesión 1.</li>
-                                <li>Dibujos de la Fase 2 (especialmente el T-Bar para referencia de flujo).</li>
-                                <li>Tablero Kanban con el estado actualizado de la Sesión 1.</li>
-                                <li>Nuevas tarjetas de tareas para Kanban: "Programar Clic Héroe", "Programar Clic Villano".</li>
+                                <li>Dibujos de la Fase 2 (T-Bar).</li>
+                                <li>Tablero Kanban actualizado.</li>
+                                <li>Nuevas tarjetas Kanban: "Programar Clic Héroe", "Programar Clic Villano".</li>
                             </ul>
                         </td>
                     </tr>
@@ -147,10 +154,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 1 (2 min): Revisión Rápida y Objetivo del Día</strong>
-                            <br>Reunir a los equipos frente a su dispositivo con el proyecto de la Sesión 1 abierto.
-                            <br>Preguntar qué se logró en la sesión anterior.
-                            <br><strong>Proyectar Diapositiva 1</strong> (Título de la Sesión + Iconos de clic/touch y flechas indicando cambio de escena).
+                            <strong>Paso 1: Revisión Rápida y Objetivo del Día</strong>
+                            <ul>
+                                <li>Reunir a los equipos frente a su dispositivo con el proyecto abierto.</li>
+                                <li>Preguntar qué se logró en la sesión anterior.</li>
+                                <li><strong>Proyectar Diapositiva 1</strong>. <em>Título:</em> Sesión 2: ¡Construyendo la Decisión! – El Poder del Toque</li>
+                            </ul>
                         </td>
                         <td>
                             "¡Hola de nuevo, equipos de Héroes! ¿Listos para darle vida a nuestra aventura?"
@@ -162,10 +171,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 2 (3 min): Revisión y Asignación de Roles</strong>
-                             <br>Recordar brevemente los roles (Diseñador/a, Constructor/a, Probador/a).
-                             <br>Permitir que los equipos roten roles si lo desean o mantener los mismos. Confirmar quién tiene cada rol.
-                             <br>Añadir las nuevas tarjetas "Programar Clic Héroe" y "Programar Clic Villano" a la columna "Tareas por Hacer" del Kanban.
+                            <strong>Paso 2: Revisión y Asignación de Roles</strong>
+                             <ul>
+                                 <li>Recordar brevemente los roles.</li>
+                                 <li>Permitir rotación de roles si se desea. Confirmar roles.</li>
+                                 <li>Añadir nuevas tarjetas Kanban a "Tareas por Hacer".</li>
+                             </ul>
                         </td>
                         <td>
                             "Para esta misión mágica, necesitamos a nuestros expertos. Recordemos los roles: ¿Quién cuida los dibujos? (Diseñador/a). ¿Quién usa la tablet para programar? (Constructor/a). ¿Y quién prueba todo y da ideas? (Probador/a)."
@@ -192,15 +203,17 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 1 (12 min): Programar Clic Héroe -> Escena Mejor</strong>
-                            <br>Guiar al Constructor/a para seleccionar al Héroe en la Escena Inicial.
-                            <br>Instruir sobre cómo añadir el bloque "Al Tocar Personaje" (Start on Tap - Bloque Amarillo).
-                            <br>Instruir sobre cómo añadir el bloque "Ir a Escena" (Go to Page - Bloque Rojo) y seleccionar la Escena Mejor creada en Sesión 1.
-                            <br><strong>Proyectar Diapositiva 2</strong> (Mostrar visualmente los bloques "Al Tocar Personaje" y "Ir a Escena" conectados, y cómo seleccionar la página correcta).
-                            <br>El Diseñador/a confirma que la escena seleccionada es la "Mejor" según el plan/T-Bar.
-                            <br>El Probador/a prueba inmediatamente si al tocar al Héroe se va a la Escena Mejor.
-                            <br>Mover tarjeta "Programar Clic Héroe" a "¡Haciendo Ahora!" y luego a "¡Listo para Probar!".
-                            <br>Facilitador circula activamente, resolviendo dudas sobre los bloques.
+                            <strong>Paso 1: Programar Clic Héroe -> Escena Mejor</strong>
+                            <ul>
+                                <li>Guiar al Constructor/a para seleccionar al Héroe en Escena Inicial.</li>
+                                <li>Instruir añadir bloque "Al Tocar Personaje".</li>
+                                <li>Instruir añadir bloque "Ir a Escena" y seleccionar Escena Mejor.</li>
+                                <li><strong>Proyectar Diapositiva 2</strong>.</li>
+                                <li>Diseñador/a confirma escena correcta.</li>
+                                <li>Probador/a prueba inmediatamente.</li>
+                                <li>Mover tarjeta "Programar Clic Héroe" en Kanban.</li>
+                                <li>Facilitador circula y resuelve dudas.</li>
+                            </ul>
                         </td>
                         <td>
                             "¡Constructores, es hora de la primera magia! Seleccionen a su Héroe en la pantalla de inicio."
@@ -220,15 +233,17 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 2 (12 min): Programar Clic Villano -> Escena Peor</strong>
-                            <br>Guiar al Constructor/a para seleccionar al Villano/Problema en la Escena Inicial.
-                            <br>Repetir el proceso: añadir bloque "Al Tocar Personaje" y bloque "Ir a Escena".
-                            <br>Asegurarse de que seleccionen la Escena Peor creada en Sesión 1.
-                            <br><strong>Proyectar Diapositiva 3</strong> (Similar a la Diapositiva 2 pero enfocada en el Villano/Problema y la Escena Peor).
-                            <br>El Diseñador/a confirma que la escena seleccionada es la "Peor".
-                            <br>El Probador/a prueba si al tocar al Villano se va a la Escena Peor. Realiza pruebas combinadas (tocar héroe, volver, tocar villano).
-                            <br>Mover tarjeta "Programar Clic Villano" a "¡Haciendo Ahora!" y luego a "¡Listo para Probar!".
-                            <br>Facilitador circula, enfatizando la diferencia entre este clic y el anterior.
+                            <strong>Paso 2: Programar Clic Villano -> Escena Peor</strong>
+                            <ul>
+                                <li>Guiar al Constructor/a para seleccionar al Villano/Problema en Escena Inicial.</li>
+                                <li>Repetir proceso: añadir bloques "Al Tocar Personaje" e "Ir a Escena".</li>
+                                <li>Asegurarse de seleccionar Escena Peor.</li>
+                                <li><strong>Proyectar Diapositiva 3</strong>.</li>
+                                <li>Diseñador/a confirma escena correcta.</li>
+                                <li>Probador/a prueba. Realiza pruebas combinadas.</li>
+                                <li>Mover tarjeta "Programar Clic Villano" en Kanban.</li>
+                                <li>Facilitador circula.</li>
+                            </ul>
                         </td>
                         <td>
                             "¡Excelente con el Héroe! Ahora, ¡vamos con el Villano o el Problema! Constructores, selecciónenlo en la Escena Inicial."
@@ -246,10 +261,12 @@
                     </tr>
                      <tr>
                         <td>
-                            <strong>Paso 3 (6 min): Prueba Intensiva y Ajustes Finos</strong>
-                            <br>El Probador/a lidera una ronda de pruebas más intensivas: tocar rápido, tocar en bordes, asegurar que siempre funcione como se espera.
-                            <br>El Constructor/a realiza pequeños ajustes si algo falla (ej. bloque no conectado, página incorrecta seleccionada), con ayuda del Diseñador/a si es un error de flujo.
-                            <br>Mover las tarjetas a "✅ ¡Terminado!" si la funcionalidad es correcta y estable.
+                            <strong>Paso 3: Prueba Intensiva y Ajustes Finos</strong>
+                            <ul>
+                                <li>Probador/a lidera ronda de pruebas intensivas.</li>
+                                <li>Constructor/a realiza ajustes con ayuda del Diseñador/a.</li>
+                                <li>Mover las tarjetas a "✅ ¡Terminado!" si funciona.</li>
+                            </ul>
                         </td>
                         <td>
                             "¡Equipos, ahora la prueba de fuego! Probadores, ¡sean detectives exigentes! Toquen al Héroe varias veces, rápido. Luego al Villano. ¿Siempre funciona? ¿Siempre va a la escena correcta?"
@@ -278,8 +295,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 1 (2 min): Demostración Rápida (Opcional)</strong>
-                            <br>Invitar a 1-2 equipos a mostrar rápidamente en su tablet cómo funciona el clic del Héroe y el Villano.
+                            <strong>Paso 1: Demostración Rápida</strong>
+                            <ul>
+                                <li>Invitar a 1-2 equipos a mostrar rápidamente cómo funciona su clic.</li>
+                            </ul>
                         </td>
                         <td>
                             "¡Increíble trabajo, programadores! ¡Han dado poder a sus personajes!"
@@ -289,10 +308,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 2 (2 min): Guardar Proyecto (¡Fundamental!)</strong>
-                            <br>Guiar EXPLICITAMENTE a los Constructores para guardar el proyecto con los cambios.
-                            <br>Asegurarse de que todos los equipos hayan guardado correctamente. Pedir confirmación visual.
-                            <br><strong>Proyectar Diapositiva 4</strong> (Icono grande de Guardar + Mensaje "¡Guarda tu Magia!").
+                            <strong>Paso 2: Guardar Proyecto (¡Fundamental!)</strong>
+                            <ul>
+                                <li>Guiar EXPLICITAMENTE para guardar el proyecto.</li>
+                                <li>Asegurarse de que todos guarden. Pedir confirmación.</li>
+                                <li><strong>Proyectar Diapositiva 4</strong>. <em>Título:</em> ¡Guarda tu Magia!</li>
+                            </ul>
                         </td>
                         <td>
                             "¡Antes de irnos, paso ESENCIAL! ¡GUARDAR nuestra magia! <em>(Mostrar Diapositiva 4)</em>."
@@ -306,9 +327,11 @@
                     </tr>
                      <tr>
                         <td>
-                            <strong>Paso 3 (1 min): Próximos Pasos y Cierre</strong>
-                            <br>Anunciar brevemente el objetivo de la Sesión 3 (Probar y Corregir Errores).
-                            <br>Felicitar a los equipos.
+                            <strong>Paso 3: Próximos Pasos y Cierre</strong>
+                            <ul>
+                                <li>Anunciar brevemente el objetivo de la Sesión 3.</li>
+                                <li>Felicitar a los equipos.</li>
+                            </ul>
                         </td>
                         <td>
                             "¡Felicidades, equipos! ¡Su aventura ya responde al tacto! ¡El corazón de su historia está latiendo!"
